@@ -12,7 +12,7 @@ control::control()
 	this->file_load();
 }
 
-
+	
 string person::get_name()
 {
 	return name;
@@ -128,7 +128,7 @@ void control::show()
 
 void control::sort_()
 {
-	vector<string> temp;
+	/*vector<string> temp;
 	for (auto it = people.begin(); it != people.end(); it++)
 	{
 		temp.push_back(it->get_name());
@@ -145,7 +145,33 @@ void control::sort_()
 	for (auto it = temp_p.begin(); it != temp_p.end(); it++)
 	{
 		people.push_back((*it));
+	}*/
+	sort(people.begin(), people.end());
+}
+void control::add()
+{
+	string name;
+	string number;
+	string email;
+	cin >> name >> number >> email;
+	person temp(name, number, email);
+	people.push_back(temp);
+	sort_();
+	show();
+}
+void control::remove(string name_)
+{
+	for (auto it = people.begin(); it != people.end(); it++)
+	{
+		if (it->get_name() == name_)
+		{
+			people.erase(it);
+		}
 	}
+}
+bool person::operator <(person p1)
+{
+	return this->get_name() < p1.get_name();
 }
 
 vector<person>::iterator control::find_name(string name_)
