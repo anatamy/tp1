@@ -15,7 +15,8 @@ public:
 	string get_number();	
 	string get_email();
 	bool get_favorite();
-	void set_numer(string number_);
+	string get_find_num();
+	void set_number(string number_);
 	void set_email(string email_);
 	void set_favorite();
 private:
@@ -23,6 +24,7 @@ private:
 	string number;
 	string email;
 	bool favorite = false;
+	string find_num;
 };
 
 class control
@@ -36,6 +38,7 @@ public:
 	 void show_favorite();
 	 void sort_();
 	 void show(vector<person*>::iterator it);
+	 void change_info(string name_, string check_);
 	 void add(string name,string number,string email);
 	 int remove(string name_);
 	 vector<person*>::iterator get_end_it();

@@ -25,7 +25,10 @@ class sms_control
 public:
 	sms_control();
 	void file_load();
+	void file_save();
 	void show();
+	void show_history(string name_);
+	void delete_history(string name_from_, string name_to_);
 private:
 	vector<sms*> sms_list;
 };
